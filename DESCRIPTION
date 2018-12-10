@@ -1,9 +1,11 @@
 Package: pollplot
-Title: What the Package Does (one line, title case)
+Title: Functions for retrieving and plotting Norwegian polling results
 Version: 0.0.0.9000
 Authors@R: 'Aksel A. Henriksen <a@b> [aut, cre]'
 Description: What the package does (one paragraph).
 Depends: R (>= 3.5.0)
+Imports: stats, utils, graphics, grDevices, zoo, xts
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 6.0.1

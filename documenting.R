@@ -97,19 +97,17 @@ add_data <- function(projname) {
     } else {
     	cat("Files added:")
     }
-    dtf <- data.frame(x=paste(files, ""), 
-      y=paste(sprintf("%.1f", file.size(files)/1000), "kB"))
+    dtf <- data.frame(x=paste0(files), 
+                      y=paste(sprintf("%.1f", file.size(files)/1000), "kB"))
     names(dtf) <- c(" ", " ")
     dtf
 }
 
-# load_all(projname)
-# add_data(projname)
-# document(projname)
+load_all(projname)
+add_data(projname)
+document(projname)
 
-# unload(projname)
-
-# check(projname, manual=TRUE)
+check(projname, manual=FALSE)
 
 show_pdf <- function(package, lib.loc=NULL, opt="--force") {
     owd <- getwd()
@@ -120,15 +118,17 @@ show_pdf <- function(package, lib.loc=NULL, opt="--force") {
                   shQuote(path))) 
     setwd(owd)
 } 
-# show_pdf(projname)
+show_pdf(projname)
 
-use_build_ignore(c("data.R", "documenting.R", "commit.command"), pkg=projname)
+use_build_ignore(c("data\\.R", "documenting\\.R", "commit\\.command", "\\.pdf$"),
+  pkg=projname, escape=FALSE)
+
+readLines(file.path(projname, ".Rbuildignore"))
 
 # run convenience script to add, commit and maybe push change
-# system(paste0("open ", projname, "/commit.command"))
+system(paste0("open ", projname, "/commit.command"))
 
 # dev_example(projname)
 
-# install_github(paste0("AkselA/R-", projname))
-# library(projname, character.only=TRUE)
-
+install_github(paste0("AkselA/R-", projname))
+library(projname, character.only=TRUE)
