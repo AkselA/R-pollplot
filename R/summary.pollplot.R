@@ -57,3 +57,10 @@ summary.pollplot <- function(object, round=1, ...) {
     print(summ)
     invisible(summ)
 }
+
+#' @export
+
+str.pollplot <- function(object, ...) {
+	cat("'pollplot'")
+	str(unclass(object), ...)
+}

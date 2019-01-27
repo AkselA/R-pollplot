@@ -81,7 +81,7 @@ tail.pollplot <- function(x, n=14L, ...) {
 
 #' @export
 
-`[.pollplot` <- function(x, i, j, k, drop=FALSE) {
+`[.pollplot` <- function(x, i, j, k, drop=FALSE, ...) {
 	d <- dim(x)
     if (missing(i))
         i <- seq_len(d[1])
