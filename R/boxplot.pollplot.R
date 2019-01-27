@@ -1,5 +1,3 @@
-
-
 boxplot.pollplot <- function(x, log1p.y=TRUE, border=ppcol, 
   col=adjustcolor(ppcol, 0.5), cex.axis=c(0.65, 0.8), whisklty=1, 
   main=NULL, ...) {
@@ -8,7 +6,7 @@ boxplot.pollplot <- function(x, log1p.y=TRUE, border=ppcol,
   	}
 	d <- dim(x)
 
-	app <- t(matrix(aperm(x, c(2, 1, 3)), nrow=d[2]))
+	app <- t(matrix(aperm(unclass(x), c(2, 1, 3)), nrow=d[2]))
 	nna <- !is.na(app[,1])
 	app <- app[nna,]
 	colnames(app) <- colnames(x)
