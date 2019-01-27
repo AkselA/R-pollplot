@@ -1,3 +1,5 @@
+#' @export
+
 boxplot.pollplot <- function(x, log1p.y=TRUE, border=ppcol, 
   col=adjustcolor(ppcol, 0.5), cex.axis=c(0.65, 0.8), whisklty=1, 
   main=NULL, ...) {

@@ -2,6 +2,7 @@
 
 S3method("[",pollplot)
 S3method(as.zoo,pollplot)
+S3method(boxplot,pollplot)
 S3method(end,pollplot)
 S3method(head,pollplot)
 S3method(print,pollplot)
