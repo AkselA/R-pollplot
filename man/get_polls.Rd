@@ -4,15 +4,15 @@
 \alias{get_polls}
 \title{Get polling results}
 \usage{
-get_polls(serieid = c(1:8, 15, 25, 626), min.length = 8, verbose = TRUE,
-  list = FALSE)
+get_polls(serieid = c(1:8, 15, 25, 160, 626), min.length = 8,
+  verbose = TRUE, list = FALSE)
 }
 \arguments{
-\item{serieid}{the id of the series to be retrieved}
+\item{serieid}{id of the series to be retrieved}
 
-\item{min.length}{the minimum length for a series to be included}
+\item{min.length}{minimum length for included series}
 
-\item{verbose}{print messages}
+\item{verbose}{print progress messages}
 
 \item{list}{return output as a list}
 }
@@ -52,7 +52,7 @@ window(pp, start=Sys.Date()-30)
 # end is always Sys.Date() at the time of retrieval
 end(pp)
 
-# start is the date of the earlies sample. Depends on serieid
+# start is the date of the earliest sample. Depends on serieid
 start(pp)
 start(get_polls(10))
 

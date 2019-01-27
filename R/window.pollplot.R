@@ -28,6 +28,14 @@ window.pollplot <- function(x, start=NULL, end=NULL, ...) {
 	if (is.character(end) | is.numeric(end)) {
 		end <- zoo::as.Date(end, ...)
 	}
+	if (start < start(x)) {
+		start <- start(x)
+		warning("'start' is earlier than first sample")
+	}
+	if (end > end(x)) {
+		end <- end(x)
+		warning("'end' is later than last sample")
+	}
     d <- time(x)
     s <- which(d == start)
     e <- which(d == end)
@@ -69,4 +77,21 @@ tail.pollplot <- function(x, n=14L, ...) {
     attr(x.t, "info") <- attr(x, "info")
     class(x.t) <- class(x)
     x.t
+}
+
+#' @export
+
+`[.pollplot` <- function(x, i, j, k, drop=FALSE) {
+	d <- dim(x)
+    if (missing(i))
+        i <- seq_len(d[1])
+    if (missing(j))
+        j <- seq_len(d[2])
+    if (missing(k))
+        k <- seq_len(d[3])
+    xo <- unclass(x)[i, j, k, drop=drop]
+    attr(xo, "date") <- attr(x, "date")[i]
+    attr(xo, "info") <- attr(x, "info")[k,]
+    class(xo) <- "pollplot"
+    xo
 }

@@ -2,9 +2,9 @@
 #' 
 #' Retrieve polling results from \code{pollofpolls.no}
 #' 
-#' @param serieid the id of the series to be retrieved
-#' @param min.length the minimum length for a series to be included
-#' @param verbose print messages
+#' @param serieid id of the series to be retrieved
+#' @param min.length minimum length for included series
+#' @param verbose print progress messages
 #' @param list return output as a list
 #' 
 #' @details
@@ -42,7 +42,7 @@
 #' # end is always Sys.Date() at the time of retrieval
 #' end(pp)
 #' 
-#' # start is the date of the earlies sample. Depends on serieid
+#' # start is the date of the earliest sample. Depends on serieid
 #' start(pp)
 #' start(get_polls(10))
 #' 
@@ -69,7 +69,7 @@
 #' 
 
 
-get_polls <- function(serieid=c(1:8, 15, 25, 626), min.length=8, 
+get_polls <- function(serieid=c(1:8, 15, 25, 160, 626), min.length=8, 
   verbose=TRUE, list=FALSE) {	
 	
 	loc <- Sys.getlocale("LC_CTYPE")
