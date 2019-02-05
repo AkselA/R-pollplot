@@ -58,6 +58,7 @@ summary.pollplot <- function(object, round=1, ...) {
     invisible(summ)
 }
 
+
 #' @export
 
 str.pollplot <- function(object, ...) {
