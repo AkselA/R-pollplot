@@ -109,6 +109,8 @@ use_build_ignore(
 
 readLines(file.path(projname, ".Rbuildignore"))
 
+# detach(package:pollplot)
+
 document(projname)
 load_all(projname)
 add_data(projname)

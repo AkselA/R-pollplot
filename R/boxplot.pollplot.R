@@ -1,22 +1,25 @@
 #' @export
 
-boxplot.pollplot <- function(x, log1p.y=TRUE, border=ppcol, 
-  col=adjustcolor(ppcol, 0.5), cex.axis=c(0.65, 0.8), whisklty=1, 
+boxplot.pollplot <- function(x, log1p.y=TRUE, border=ppcol(), 
+  col=ppcol(0.5), cex.axis=c(0.65, 0.8), whisklty=1, 
   main=NULL, ...) {
   	if (length(cex.axis) != 2) {
   		cex.axis <- rep(cex.axis, length.out=2)
   	}
 	d <- dim(x)
+	cn <- colnames(x)
+    border <- border[cn]
+    col <- col[cn]
 
 	app <- t(matrix(aperm(unclass(x), c(2, 1, 3)), nrow=d[2]))
 	nna <- !is.na(app[,1])
 	app <- app[nna,]
-	colnames(app) <- colnames(x)
+	colnames(app) <- cn
 	timevec <- rep(time(x), d[3])[nna]
-	
 	daterange <- range(timevec)
+	
 	if (is.null(main)) {
-	    maintext <- paste(daterange, collapse="–")
+	    maintext <- paste(daterange, collapse=" \u2013 ")
 	} else {
 		maintext <- main
 	}

@@ -3,16 +3,16 @@
 # from the 'data/' folder
 
 alpha <- 0.94
-ppcol <- c(Ap=hsv(0.025, 0.840, 0.900, alpha),
-        Hoyre=hsv(0.578, 0.517, 0.900, alpha), 
-          Frp=hsv(0.600, 0.900, 0.520, alpha), 
-           SV=hsv(0.940, 0.650, 1.000, alpha), 
-           Sp=hsv(0.244, 0.980, 0.558, alpha), 
-          KrF=hsv(0.121, 1.000, 0.982, alpha), 
-      Venstre=hsv(0.498, 1.000, 0.490, alpha), 
-          MdG=hsv(0.220, 1.000, 0.788, alpha),   
-         Rodt=hsv(0.000, 1.000, 0.700, alpha), 
-        Andre=hsv(0.000, 0.000, 0.500, alpha))
+# ppcol <- c(Ap=hsv(0.025, 0.840, 0.900, alpha),
+        # Hoyre=hsv(0.578, 0.517, 0.900, alpha), 
+          # Frp=hsv(0.600, 0.900, 0.520, alpha), 
+           # SV=hsv(0.940, 0.650, 1.000, alpha), 
+           # Sp=hsv(0.244, 0.980, 0.558, alpha), 
+          # KrF=hsv(0.121, 1.000, 0.982, alpha), 
+      # Venstre=hsv(0.498, 1.000, 0.490, alpha), 
+          # MdG=hsv(0.220, 1.000, 0.788, alpha),   
+         # Rodt=hsv(0.000, 1.000, 0.700, alpha), 
+        # Andre=hsv(0.000, 0.000, 0.500, alpha))
         
 
 # general election results
